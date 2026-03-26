@@ -9,6 +9,7 @@ const links = [
   { href: "#nosotros", label: "Nosotros" },
   { href: "#productos", label: "Productos" },
   { href: "#proceso", label: "Proceso" },
+  { href: "#faq", label: "FAQ" },
   { href: "#contacto", label: "Contacto" },
 ];
 
@@ -40,6 +41,7 @@ export default function Navbar() {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between"
         aria-label="Navegación principal"
       >
+        {/* Logo */}
         <button
           onClick={() => handleNav("#inicio")}
           className="flex items-center gap-3 group focus:outline-none"
@@ -60,7 +62,8 @@ export default function Navbar() {
           </span>
         </button>
 
-        <ul className="hidden lg:flex items-center gap-8">
+        {/* Desktop links */}
+        <ul className="hidden lg:flex items-center gap-7">
           {links.map((l) => (
             <li key={l.href}>
               <button
@@ -74,6 +77,7 @@ export default function Navbar() {
           ))}
         </ul>
 
+        {/* CTA */}
         <div className="hidden lg:block">
           <button
             onClick={() => handleNav("#contacto")}
@@ -83,6 +87,7 @@ export default function Navbar() {
           </button>
         </div>
 
+        {/* Hamburger */}
         <button
           onClick={() => setOpen(!open)}
           className={`lg:hidden p-2 rounded-lg transition-colors ${scrolled ? "text-forest-800 hover:bg-forest-50" : "text-white hover:bg-white/10"}`}
@@ -93,7 +98,8 @@ export default function Navbar() {
         </button>
       </nav>
 
-      <div className={`lg:hidden overflow-hidden transition-all duration-300 ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
+      {/* Mobile menu */}
+      <div className={`lg:hidden overflow-hidden transition-all duration-300 ${open ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}>
         <div className="bg-white/98 backdrop-blur-md border-t border-forest-100 px-4 py-6 shadow-xl">
           <ul className="flex flex-col gap-1">
             {links.map((l) => (

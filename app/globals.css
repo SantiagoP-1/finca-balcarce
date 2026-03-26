@@ -94,3 +94,16 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Marquee infinito para supermercados */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+.animate-marquee {
+  animation: marquee 18s linear infinite;
+  width: max-content;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}

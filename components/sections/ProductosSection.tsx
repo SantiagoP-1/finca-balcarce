@@ -6,31 +6,35 @@ const products = [
   {
     title: "Papas Crispy",
     description:
-      "Nuestras papas pre-fritas supercongeladas cortadas en bastones. Más crocantes, menos tiempo. Sin TACC, libres de gluten. La receta mejorada con el sabor y la calidad de siempre.",
+      "Papas pre-fritas supercongeladas cortadas en bastones. Más crocantes, menos tiempo. Sin TACC, libres de gluten.",
     imageUrl: "/images/papascrispy.jpg",
     imageAlt: "Papas Crispy Finca Balcarce - papas supercongeladas sin gluten",
     badge: "Más vendido",
+    peso: "1 Kg",
   },
   {
     title: "Frutillas Supercongeladas",
     description:
-      "Frutillas supercongeladas en su punto óptimo de maduración. Frescura garantizada desde el origen. Sin gluten, listas para el consumo directo. Peso neto 500g.",
+      "Frutillas en su punto óptimo de maduración. Frescura garantizada desde el origen. Sin gluten, listas para consumo directo.",
     imageUrl: "/images/frutillascongeladas.jpg",
-    imageAlt: "Frutillas supercongeladas Finca Balcarce - maduración óptima sin gluten",
+    imageAlt: "Frutillas supercongeladas Finca Balcarce",
+    peso: "500 g",
   },
   {
     title: "Pinchos de Tortilla",
     description:
-      "Tortilla de papa congelada IQF, estilo casero con auténtico sabor. Lista en 15 min al horno, 5 min en sartén o 12 min en airfryer. Industria argentina, peso neto 500g.",
+      "Tortilla de papa congelada IQF, estilo casero con auténtico sabor. Lista en 15 min al horno o 12 min en airfryer.",
     imageUrl: "/images/pinchostortilla.jpg",
-    imageAlt: "Pinchos de Tortilla de papa congelada Finca Balcarce - estilo casero",
+    imageAlt: "Pinchos de Tortilla de papa congelada Finca Balcarce",
+    peso: "500 g",
   },
   {
     title: "Espinaca Supercongelada",
     description:
-      "Espinaca supercongelada con frescura garantizada desde el origen. Sin gluten, conservando todas sus propiedades nutricionales naturales. Peso neto 500g.",
+      "Espinaca supercongelada con frescura garantizada desde el origen. Sin gluten, conservando todas sus propiedades nutricionales.",
     imageUrl: "/images/espinaca.jpg",
-    imageAlt: "Espinaca supercongelada Finca Balcarce - vegetal supercongelado sin gluten",
+    imageAlt: "Espinaca supercongelada Finca Balcarce",
+    peso: "500 g",
   },
 ];
 
@@ -67,7 +71,6 @@ export default function ProductosSection() {
           ))}
         </div>
 
-        {/* Bottom note */}
         <p className="text-center text-earth-400 text-sm mt-12 font-body">
           Todos nuestros productos son{" "}
           <strong className="text-earth-600">libres de gluten</strong>,{" "}

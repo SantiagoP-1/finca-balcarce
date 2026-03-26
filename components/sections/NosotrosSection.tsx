@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useReveal } from "@/lib/useReveal";
-import { MapPin, Award, Sprout } from "lucide-react";
+import { Award, Sprout } from "lucide-react";
 
 export default function NosotrosSection() {
   const { ref, visible } = useReveal();
@@ -21,7 +21,7 @@ export default function NosotrosSection() {
             ref={ref as React.RefObject<HTMLDivElement>}
             className={`relative reveal ${visible ? "visible" : ""}`}
           >
-            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl shadow-forest-900/15 bg-earth-100 flex items-center justify-center">
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl shadow-forest-900/15">
               <Image
                 src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?w=900&q=80"
                 alt="Campo de cultivo de papas en Balcarce, Buenos Aires - Finca Balcarce"
@@ -30,18 +30,25 @@ export default function NosotrosSection() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest-900/20 via-transparent to-transparent" />
+              {/* Overlay sutil */}
+              <div className="absolute inset-0 bg-gradient-to-t from-forest-900/40 via-transparent to-transparent" />
             </div>
 
-            {/* Floating badge */}
+            {/* Floating badge — ubicación */}
             <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-5 shadow-xl shadow-forest-900/10 border border-earth-100">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-forest-100 rounded-xl flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-forest-600" />
+                <div className="relative w-10 h-10 rounded-xl overflow-hidden shrink-0">
+                  <Image
+                    src="/images/balcarcelogo.png"
+                    alt="Escudo de Balcarce"
+                    fill
+                    className="object-contain"
+                    sizes="40px"
+                  />
                 </div>
                 <div>
                   <p className="font-display font-semibold text-earth-800 text-sm">Balcarce</p>
-                  <p className="text-earth-500 text-xs">Buenos Aires, Argentina</p>
+                  <p className="text-earth-500 text-xs">Capital nacional de la papa</p>
                 </div>
               </div>
             </div>
@@ -91,7 +98,11 @@ export default function NosotrosSection() {
                   desc: "De la siembra a la comercialización",
                 },
                 {
-                  icon: MapPin,
+                  icon: () => (
+                    <div className="relative w-5 h-5">
+                      <Image src="/images/balcarcelogo.png" alt="Balcarce" fill className="object-contain" sizes="20px" />
+                    </div>
+                  ),
                   title: "Balcarce",
                   desc: "Capital nacional de la papa",
                 },
